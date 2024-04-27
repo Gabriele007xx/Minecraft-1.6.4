@@ -1,5 +1,5 @@
 # Minecraft 1.6.4 codice sorgente
-
+![MC  Screenshot](https://github.com/Gabriele007xx/Minecraft-1.6.4/blob/main/img/1.6.4.png)
 ![Static Badge](https://img.shields.io/badge/nostalgia-gray)
 
 Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al progetto MCP 8.11.
