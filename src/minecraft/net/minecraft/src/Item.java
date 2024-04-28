@@ -198,8 +198,10 @@ public class Item
     public static Item record11 = (new ItemRecord(2010, "11")).setUnlocalizedName("record").setTextureName("record_11");
     public static Item recordWait = (new ItemRecord(2011, "wait")).setUnlocalizedName("record").setTextureName("record_wait");
     // nuovi pesci: vedremo piu' tardi di mettere le texture giuste.
-    public static Item salmonRaw = (new ItemFood(2012, 2, 0.3F, false)).setUnlocalizedName("salmonRaw").setTextureName("fish_raw");
-    public static Item salmonCooked = (new ItemFood(2013, 2, 0.3F, false)).setUnlocalizedName("salmonCooked").setTextureName("fish_cooked");
+    public static Item salmonRaw = (new ItemFood(2012, 2, 0.4F, false)).setUnlocalizedName("salmonRaw").setTextureName("fish_raw");
+    public static Item salmonCooked = (new ItemFood(2013, 6, 9.6F, false)).setUnlocalizedName("salmonCooked").setTextureName("fish_cooked");
+    public static Item pufferfish = (new ItemFood(2014, 1, 0.2F, false)).setUnlocalizedName("pufferfish").setTextureName("fish_raw");
+    public static Item tropicalFish = (new ItemFood(2015, 1, 0.3F, false)).setUnlocalizedName("tropicalFish").setTextureName("fish_raw");
     /** The ID of this item. */
     public final int itemID;
 
