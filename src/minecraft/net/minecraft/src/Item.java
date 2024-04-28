@@ -546,7 +546,7 @@ public class Item
 /**
      * Set this item immune to fire.
      */
-    public void setIsImmuneToFire()
+    public voidcleù setIsImmuneToFire()
     {
         IsImmuneToFire = true;
     }
