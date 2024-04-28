@@ -200,7 +200,7 @@ public class Item
     // nuovi pesci: vedremo piu' tardi di mettere le texture giuste.
     public static Item salmonRaw = (new ItemFood(2012, 2, 0.4F, false)).setUnlocalizedName("salmonRaw").setTextureName("fish_raw");
     public static Item salmonCooked = (new ItemFood(2013, 6, 9.6F, false)).setUnlocalizedName("salmonCooked").setTextureName("fish_cooked");
-    public static Item pufferfish = (new ItemFood(2014, 1, 0.2F, false)).setUnlocalizedName("pufferfish").setTextureName("fish_raw");
+    public static Item pufferfish = (new ItemFood(2014, 1, 0.2F, false)).setPotionEffect(Potion.poison.id, 1200, 3, 1F).setUnlocalizedName("pufferfish").setTextureName("fish_raw");
     public static Item tropicalFish = (new ItemFood(2015, 1, 0.3F, false)).setUnlocalizedName("tropicalFish").setTextureName("fish_raw");
     /** The ID of this item. */
     public final int itemID;
