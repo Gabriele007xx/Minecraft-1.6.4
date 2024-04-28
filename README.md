@@ -9,6 +9,10 @@ Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al p
 
 - src: codice sorgente di Minecraft.
 
+# Documentazione del codice
+
+La documentazione è disponibile [qui](http://www.msnhomepage.altervista.org/documenti/github/MC164/) in formato javadoc.
+
 # Branches
 
 - main: Contiene il codice sorgente pulito, non toccato.
