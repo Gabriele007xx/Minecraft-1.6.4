@@ -1,4 +1,4 @@
-# Minecraft 1.6.4 codice sorgente
+# Minecraft 1.6.4 custom version
 ![MC  Screenshot](https://github.com/Gabriele007xx/Minecraft-1.6.4/blob/main/img/1.6.4.png)
 
 ![Static Badge](https://img.shields.io/badge/nostalgia-gray)
