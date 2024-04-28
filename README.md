@@ -4,7 +4,8 @@
 ![Static Badge](https://img.shields.io/badge/nostalgia-gray) ![Static Badge](https://img.shields.io/badge/1.6.4-extended-blue)
 
 
-Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al progetto MCP 8.11.
+Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al progetto MCP 8.11. Questa branch contiene in particolare il codice
+originale esteso.
 
 # Cartelle
 - png: custom textures.
