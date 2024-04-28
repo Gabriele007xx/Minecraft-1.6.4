@@ -18,6 +18,6 @@ Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al p
 
 # Uso
 - Clona la repository dal branch main se si vuole il codice originale.
-- Dentro la repository, spacchetta il Mod Coder Pack (MCP) versione 8.11. [Download MCP]().
+- Dentro la repository, spacchetta il Mod Coder Pack (MCP) versione 8.11. [Download MCP](http://www.mediafire.com/?96mrmeo57cdf6zv).
 - Dopo aver fatto le modificato copiare il contenuto di src in mcp811/src.
 - Compilare usando l'MCP.
