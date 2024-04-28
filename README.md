@@ -7,7 +7,6 @@ Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al p
 
 # Cartelle
 - png: custom textures.
-- docs: Contiene la documentazione per usare MCP.
 - src: codice sorgente di Minecraft.
 
 # Branches
@@ -20,6 +19,10 @@ Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al p
 - Dentro la repository, spacchetta il Mod Coder Pack (MCP) versione 8.11. [Download MCP](http://www.mediafire.com/?96mrmeo57cdf6zv).
 - Dopo aver fatto le modificato copiare il contenuto di src in mcp811/src.
 - Compilare usando l'MCP.
+
+# Documentazione del codice
+
+La documentazione è disponibile [qui](http://www.msnhomepage.altervista.org/documenti/github/MC164/) in formato javadoc.
 
 # TO DO list
 
