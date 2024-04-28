@@ -21,3 +21,7 @@ Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al p
 - Dentro la repository, spacchetta il Mod Coder Pack (MCP) versione 8.11. [Download MCP](http://www.mediafire.com/?96mrmeo57cdf6zv).
 - Dopo aver fatto le modificato copiare il contenuto di src in mcp811/src.
 - Compilare usando l'MCP.
+
+# TO DO list
+
+- Aggiungere l'immunità da fuoco agli oggetti dalla 1.16.
