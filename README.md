@@ -28,3 +28,4 @@ La documentazione è disponibile [qui](http://www.msnhomepage.altervista.org/doc
 
 - ~Aggiungere l'immunità da fuoco agli oggetti dalla 1.16.~ ✅
 - Aggiungere i pesci (Items) di Minecraft 1.7.2.
+- Aggiungere gli oggetti in netherite di Minecraft 1.16.
