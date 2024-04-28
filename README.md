@@ -7,7 +7,6 @@ Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al p
 
 # Cartelle
 
-- docs: Contiene la documentazione per usare MCP.
 - src: codice sorgente di Minecraft.
 
 # Branches
