@@ -6,8 +6,7 @@
 Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al progetto MCP 8.11.
 
 # Cartelle
-
-- mcp811: contiene tutti gli strumenti per decompilare, ricompilare e testare Minecraft.
+- png: custom textures.
 - docs: Contiene la documentazione per usare MCP.
 - src: codice sorgente di Minecraft.
 
