@@ -119,6 +119,9 @@ public class Item
     public static Item redstoneRepeater = (new ItemReed(100, Block.redstoneRepeaterIdle)).setUnlocalizedName("diode").setCreativeTab(CreativeTabs.tabRedstone).setTextureName("repeater");
     public static Item cookie = (new ItemFood(101, 2, 0.1F, false)).setUnlocalizedName("cookie").setTextureName("cookie");
     public static ItemMap map = (ItemMap)(new ItemMap(102)).setUnlocalizedName("map").setTextureName("map_filled");
+    // nuovi pesci: vedremo piu' tardi di mettere le texture giuste.
+    public static Item salmonRaw = (new ItemFood(103, 2, 0.3F, false)).setUnlocalizedName("salmonRaw").setTextureName("fish_raw");
+    public static Item salmonCooked = (new ItemFood(103, 2, 0.3F, false)).setUnlocalizedName("salmonCooked").setTextureName("fish_cooked");
 
     /**
      * Item introduced on 1.7 version, is a shear to cut leaves (you can keep the block) or get wool from sheeps.
