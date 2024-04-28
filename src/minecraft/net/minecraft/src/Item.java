@@ -227,6 +227,9 @@ public class Item
     /** The string associated with this Item's Icon. */
     protected String iconString;
 
+    /** If the item is immune to fire. */
+    protected boolean IsImmuneToFire=false;
+
     protected Item(int par1)
     {
         this.itemID = 256 + par1;
@@ -540,7 +543,13 @@ public class Item
         this.potionEffect = par1Str;
         return this;
     }
-
+/**
+     * Set this item immune to fire.
+     */
+    public void setIsImmuneToFire()
+    {
+        IsImmuneToFire = true;
+    }
     /**
      * Returns a string representing what this item does to a potion.
      */
@@ -669,6 +678,14 @@ public class Item
     public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
     {
         return false;
+    }
+
+    /**
+     * Return if this item is immune to fire.
+     */
+    public boolean getIsImmuneToFire()
+    {
+        return IsImmuneToFire;
     }
 
     public void registerIcons(IconRegister par1IconRegister)
