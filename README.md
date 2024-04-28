@@ -24,4 +24,5 @@ Questa repo contiene il codice sorgente di Minecraft 1.6.4, ottenuto grazie al p
 
 # TO DO list
 
-- Aggiungere l'immunità da fuoco agli oggetti dalla 1.16.
+- ~Aggiungere l'immunità da fuoco agli oggetti dalla 1.16.~✅
+- Aggiungere i pesci (Items) di Minecraft 1.7.2.
