@@ -422,7 +422,11 @@ public class EntityFishHook extends Entity
     {
         return 0.0F;
     }
-
+    /**
+     * 
+     * Funzione Eseguita quando si cattura qualcosa
+     * @return La durabilità consumata
+     */
     public int catchFish()
     {
         if (this.worldObj.isRemote)
