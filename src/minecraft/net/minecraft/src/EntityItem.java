@@ -229,6 +229,10 @@ public class EntityItem extends Entity
         {
             return false;
         }
+        else if(this.getEntityItem().getItem().getIsImmuneToFire() && (par1DamageSource == DamageSource.inFire || par1DamageSource == DamageSource.onFire))
+        {
+            return false;
+        }
         else if (this.getEntityItem() != null && this.getEntityItem().itemID == Item.netherStar.itemID && par1DamageSource.isExplosion())
         {
             return false;
