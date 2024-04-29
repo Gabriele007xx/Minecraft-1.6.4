@@ -336,6 +336,12 @@ public class EntityFishHook extends Entity
                     }
                     else
                     {
+                        /*
+                         * L'algoritmo per pescare.
+                         * Dalla wiki:
+                         * Each tick has a 1/500 chance of catching a fish, unless it's raining, in which case it's a 1/300 chance instead. 
+                         * Rain reduces the average time between catches from 346 ticks to 207 ticks, a 40% decrease.
+                         */
                         short var29 = 500;
 
                         if (this.worldObj.canLightningStrikeAt(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY) + 1, MathHelper.floor_double(this.posZ)))
