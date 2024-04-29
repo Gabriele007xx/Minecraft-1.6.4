@@ -338,18 +338,16 @@ public class EntityFishHook extends Entity
                     {
                         /*
                          * L'algoritmo per pescare.
-                         * Dalla wiki:
-                         * Each tick has a 1/500 chance of catching a fish, unless it's raining, in which case it's a 1/300 chance instead. 
-                         * Rain reduces the average time between catches from 346 ticks to 207 ticks, a 40% decrease.
+                         * Algoritmo corrente:
+                         * Seleziona un numero (var29) da 100 a 900. Deincrementalo a ogni tick. Appena raggiunge
+                         * 0, rendi l'oggetto raccoglibile per un tempo random (ticksCatchable). Il countdown è affetto da:
+                         *-Se l'esca non vede il cielo, c'è una probabilità del 50% che il counting non venga deincrementato.
+                         *-Se piove o nevica, c'è una probabilità del 25% che il counter venga deincrementato di 2 invece di 1.
+                         *-Esca riduce il numero preso di 100 per ogni livello.
                          */
-                        short var29 = 500;
-
-                        if (this.worldObj.canLightningStrikeAt(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY) + 1, MathHelper.floor_double(this.posZ)))
-                        {
-                            var29 = 300;
-                        }
-
-                        if (this.rand.nextInt(var29) == 0)
+                        short var29 = (short)(this.rand.nextInt(800)+101);
+                        
+                        if (var29==0)
                         {
                             this.ticksCatchable = this.rand.nextInt(30) + 10;
                             this.motionY -= 0.20000000298023224D;
@@ -372,6 +370,21 @@ public class EntityFishHook extends Entity
                                 var17 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.width;
                                 this.worldObj.spawnParticle("splash", this.posX + (double)var31, (double)(var30 + 1.0F), this.posZ + (double)var17, this.motionX, this.motionY, this.motionZ);
                             }
+                        }
+                        if (this.worldObj.canLightningStrikeAt(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY) + 1, MathHelper.floor_double(this.posZ)) && this.rand.nextInt(4)==0)
+                        {
+                            var29 = (short)(var29 - 2);
+                        }
+                        else if(!this.worldObj.canBlockSeeTheSky((int)this.posX,(int)this.posY,(int)this.posZ))
+                        {
+                            if(this.rand.nextInt(2)==1)
+                            {
+                                var29--;
+                            }
+                        }
+                        else
+                        {
+                            var29--;
                         }
                     }
                 }
@@ -430,7 +443,11 @@ public class EntityFishHook extends Entity
     }
     /**
      * 
-     * Funzione Eseguita quando si cattura qualcosa
+     * Funzione Eseguita quando si cattura qualcosa.
+     * 60% per il pesce normale
+     * 25% per il salmone
+     * 2% per il pesce pagliaccio
+     * 13% per il pesce palla
      * @return La durabilità consumata
      */
     public int catchFish()
@@ -457,7 +474,25 @@ public class EntityFishHook extends Entity
             }
             else if (this.ticksCatchable > 0)
             {
-                EntityItem var13 = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.fishRaw));
+                int random_Item = this.rand.nextInt(100) + 1;
+                EntityItem var13;
+                if(random_Item >= 1 && random_Item<= 60)
+                {
+                    var13 = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.fishRaw));
+                }
+                else if(random_Item>=61 && random_Item<=85)
+                {
+                    var13 = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.salmonRaw));
+                }
+                else if(random_Item>=86 && random_Item<=97)
+                {
+                    var13 = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.pufferfish));
+                }
+                else
+                {
+                    var13 = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.tropicalFish));
+                }
+                
                 double var3 = this.angler.posX - this.posX;
                 double var5 = this.angler.posY - this.posY;
                 double var7 = this.angler.posZ - this.posZ;
