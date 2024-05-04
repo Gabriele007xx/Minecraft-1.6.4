@@ -202,6 +202,10 @@ public class Item
     public static Item salmonCooked = (new ItemFood(2013, 6, 9.6F, false)).setUnlocalizedName("salmonCooked").setTextureName("fish_cooked");
     public static Item pufferfish = (new ItemFood(2014, 1, 0.2F, false)).setPotionEffect(Potion.poison.id, 1200, 3, 1F).setUnlocalizedName("pufferfish").setTextureName("fish_raw");
     public static Item tropicalFish = (new ItemFood(2015, 1, 0.3F, false)).setUnlocalizedName("tropicalFish").setTextureName("fish_raw");
+    // oggetti netherite
+    public static Item netheriteIngot = (new Item(2016)).setUnlocalizedName("netherite_ingot").setTextureName("iron_ingot").setIsImmuneToFire();
+    public static Item pickaxeNetherite = (new ItemPickaxe(2017, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_pickaxe").setTextureName("iron_pickaxe");
+    
     /** The ID of this item. */
     public final int itemID;
 
@@ -549,9 +553,10 @@ public class Item
 /**
      * Set this item immune to fire.
      */
-    public voidcleù setIsImmuneToFire()
+    public Item setIsImmuneToFire()
     {
         IsImmuneToFire = true;
+        return this;
     }
     /**
      * Returns a string representing what this item does to a potion.
