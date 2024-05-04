@@ -210,9 +210,9 @@ public class Item
     public static Item swordNetherite = (new ItemSword(2020, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_sword").setTextureName("iron_sword").setIsImmuneToFire();
     public static Item shovelNetherite = (new ItemSpade(2021, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_shovel").setTextureName("iron_shovel").setIsImmuneToFire();
     public static ItemArmor helmetNetherite = (ItemArmor)(new ItemArmor(2022, EnumArmorMaterial.NETHERITE, 5, 0)).setUnlocalizedName("helmetNetherite").setTextureName("iron_helmet");
-    public static ItemArmor plateLeather = (ItemArmor)(new ItemArmor(2023, EnumArmorMaterial.NETHERITE, 5, 1)).setUnlocalizedName("chestplateNetherite").setTextureName("iron_chestplate");
-    public static ItemArmor legsLeather = (ItemArmor)(new ItemArmor(2024, EnumArmorMaterial.NETHERITE, 5, 2)).setUnlocalizedName("leggingsNetherite").setTextureName("iron_leggings");
-    public static ItemArmor bootsLeather = (ItemArmor)(new ItemArmor(2025, EnumArmorMaterial.NETHERITE, 5, 3)).setUnlocalizedName("bootsNetherite").setTextureName("iron_boots");
+    public static ItemArmor plateNetherite = (ItemArmor)(new ItemArmor(2023, EnumArmorMaterial.NETHERITE, 5, 1)).setUnlocalizedName("chestplateNetherite").setTextureName("iron_chestplate");
+    public static ItemArmor legsNetherite = (ItemArmor)(new ItemArmor(2024, EnumArmorMaterial.NETHERITE, 5, 2)).setUnlocalizedName("leggingsNetherite").setTextureName("iron_leggings");
+    public static ItemArmor bootsNetherite = (ItemArmor)(new ItemArmor(2025, EnumArmorMaterial.NETHERITE, 5, 3)).setUnlocalizedName("bootsNetherite").setTextureName("iron_boots");
     /** The ID of this item. */
     public final int itemID;
 
