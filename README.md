@@ -32,7 +32,7 @@ La documentazione è disponibile [qui](http://www.msnhomepage.altervista.org/doc
 
 - ~Aggiungere l'immunità da fuoco agli oggetti dalla 1.16.~ ✅
 - ~Aggiungere i pesci (Items) di Minecraft 1.7.2.~ ✅
-- Aggiungere gli oggetti in netherite di Minecraft 1.16. 50% Fatto.
+- ~Aggiungere gli oggetti in netherite di Minecraft 1.16.~ ✅
 - Porting elementi della 1.7.2:
 - - Detonare i creeper con l'accendino.
 - - Gli iron Golem droppano fiori di rose invece delle rose.
