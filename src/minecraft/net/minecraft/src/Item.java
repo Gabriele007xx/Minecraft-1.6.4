@@ -204,8 +204,15 @@ public class Item
     public static Item tropicalFish = (new ItemFood(2015, 1, 0.3F, false)).setUnlocalizedName("tropicalFish").setTextureName("fish_raw");
     // oggetti netherite
     public static Item netheriteIngot = (new Item(2016)).setUnlocalizedName("netherite_ingot").setTextureName("iron_ingot").setIsImmuneToFire();
-    public static Item pickaxeNetherite = (new ItemPickaxe(2017, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_pickaxe").setTextureName("iron_pickaxe");
-    
+    public static Item pickaxeNetherite = (new ItemPickaxe(2017, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_pickaxe").setTextureName("iron_pickaxe").setIsImmuneToFire();
+    public static Item axeNetherite = (new ItemAxe(2018, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_axe").setTextureName("iron_axe").setIsImmuneToFire();
+    public static Item hoeNetherite = (new ItemHoe(2019, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_hoe").setTextureName("iron_hoe").setIsImmuneToFire();
+    public static Item swordNetherite = (new ItemSword(2020, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_sword").setTextureName("iron_sword").setIsImmuneToFire();
+    public static Item shovelNetherite = (new ItemSpade(2021, EnumToolMaterial.NETHERITE)).setUnlocalizedName("netherite_shovel").setTextureName("iron_shovel").setIsImmuneToFire();
+    public static ItemArmor helmetNetherite = (ItemArmor)(new ItemArmor(2022, EnumArmorMaterial.NETHERITE, 5, 0)).setUnlocalizedName("helmetNetherite").setTextureName("iron_helmet");
+    public static ItemArmor plateLeather = (ItemArmor)(new ItemArmor(2023, EnumArmorMaterial.NETHERITE, 5, 1)).setUnlocalizedName("chestplateNetherite").setTextureName("iron_chestplate");
+    public static ItemArmor legsLeather = (ItemArmor)(new ItemArmor(2024, EnumArmorMaterial.NETHERITE, 5, 2)).setUnlocalizedName("leggingsNetherite").setTextureName("iron_leggings");
+    public static ItemArmor bootsLeather = (ItemArmor)(new ItemArmor(2025, EnumArmorMaterial.NETHERITE, 5, 3)).setUnlocalizedName("bootsNetherite").setTextureName("iron_boots");
     /** The ID of this item. */
     public final int itemID;
 
