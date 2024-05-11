@@ -239,4 +239,13 @@ public class EntityCreeper extends EntityMob
         super.onStruckByLightning(par1EntityLightningBolt);
         this.dataWatcher.updateObject(17, Byte.valueOf((byte)1));
     }
+    @Override
+    protected boolean interact(EntityPlayer par1EntityPlayer) {
+        if(par1EntityPlayer.getItemInUse().getItem() == Item.flintAndSteel)
+        {
+            this.setCreeperState(1);
+            return true;
+        }
+        return super.interact(par1EntityPlayer);
+    }
 }
