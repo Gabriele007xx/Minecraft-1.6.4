@@ -36,7 +36,11 @@ La documentazione è disponibile [qui](http://www.msnhomepage.altervista.org/doc
 - Porting elementi della 1.7.2:
 - - ~Detonare i creeper con l'accendino.~ ✅
 - - Gli iron Golem droppano fiori di rose invece delle rose.
-- - Oggetti spazzattura e tesoro della pesca. 
+- - Oggetti spazzattura e tesoro della pesca.
+- Porting elementi della 1.10.0:
+- - Husk
+- Porting elementi della 1.13.0:
+- - Annegato
 
 ## Non codice
 
