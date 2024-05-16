@@ -3,22 +3,21 @@ package net.minecraft.src;
 import java.util.Calendar;
 import java.util.UUID;
 
-public class EntityZombie extends EntityMob
+public class EntityHusk extends EntityMob
 {
     protected static final Attribute field_110186_bp = (new RangedAttribute("zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D)).func_111117_a("Spawn Reinforcements Chance");
     private static final UUID babySpeedBoostUUID = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
     private static final AttributeModifier babySpeedBoostModifier = new AttributeModifier(babySpeedBoostUUID, "Baby speed boost", 0.5D, 1);
 
     /**
-     * Ticker used to determine the time remaining for this zombie to convert into a villager when cured.
+     * Ticker used to determine the time remaining for this zombie to convert into a zombie when drowning.
      */
     private int conversionTime;
 
-    public EntityZombie(World par1World)
+    public EntityHusk(World par1World)
     {
         super(par1World);
         this.getNavigator().setBreakDoors(true);
-        this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIBreakDoor(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
         this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, 1.0D, true));
@@ -45,7 +44,6 @@ public class EntityZombie extends EntityMob
     {
         super.entityInit();
         this.getDataWatcher().addObject(12, Byte.valueOf((byte)0));
-        this.getDataWatcher().addObject(13, Byte.valueOf((byte)0));
         this.getDataWatcher().addObject(14, Byte.valueOf((byte)0));
     }
 
@@ -99,21 +97,6 @@ public class EntityZombie extends EntityMob
         }
     }
 
-    /**
-     * Return whether this zombie is a villager.
-     */
-    public boolean isVillager()
-    {
-        return this.getDataWatcher().getWatchableObjectByte(13) == 1;
-    }
-
-    /**
-     * Set whether this zombie is a villager.
-     */
-    public void setVillager(boolean par1)
-    {
-        this.getDataWatcher().updateObject(13, Byte.valueOf((byte)(par1 ? 1 : 0)));
-    }
 
     /**
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
@@ -186,6 +169,7 @@ public class EntityZombie extends EntityMob
      */
     public void onUpdate()
     {
+        //to do: Is the mob drowning?
         if (!this.worldObj.isRemote && this.isConverting())
         {
             int var1 = this.getConversionTimeBoost();
@@ -387,11 +371,6 @@ public class EntityZombie extends EntityMob
         {
             EntityZombieGroupData var3 = (EntityZombieGroupData)par1EntityLivingData1;
 
-            if (var3.field_142046_b)
-            {
-                this.setVillager(true);
-            }
-
             if (var3.field_142048_a)
             {
                 this.setChild(true);
@@ -429,43 +408,17 @@ public class EntityZombie extends EntityMob
      */
     public boolean interact(EntityPlayer par1EntityPlayer)
     {
-        ItemStack var2 = par1EntityPlayer.getCurrentEquippedItem();
-
-        if (var2 != null && var2.getItem() == Item.appleGold && var2.getItemDamage() == 0 && this.isVillager() && this.isPotionActive(Potion.weakness))
-        {
-            if (!par1EntityPlayer.capabilities.isCreativeMode)
-            {
-                --var2.stackSize;
-            }
-
-            if (var2.stackSize <= 0)
-            {
-                par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
-            }
-
-            if (!this.worldObj.isRemote)
-            {
-                this.startConversion(this.rand.nextInt(2401) + 3600);
-            }
-
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 
     /**
-     * Starts converting this zombie into a villager. The zombie converts into a villager after the specified time in
+     * Starts converting this husk into a zombie. The zombie converts into an husk after the specified time in
      * ticks.
      */
     protected void startConversion(int par1)
     {
         this.conversionTime = par1;
         this.getDataWatcher().updateObject(14, Byte.valueOf((byte)1));
-        this.removePotionEffect(Potion.weakness.id);
-        this.addPotionEffect(new PotionEffect(Potion.damageBoost.id, par1, Math.min(this.worldObj.difficultySetting - 1, 0)));
         this.worldObj.setEntityState(this, (byte)16);
     }
 
@@ -498,7 +451,7 @@ public class EntityZombie extends EntityMob
     }
 
     /**
-     * Convert this zombie into a villager.
+     * Convert this husk into a zombie.
      */
     protected void convertToVillager()
     {
