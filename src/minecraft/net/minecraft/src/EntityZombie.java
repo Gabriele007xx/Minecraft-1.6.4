@@ -228,6 +228,15 @@ public class EntityZombie extends EntityMob
                 this.convertToVillager();
             }
         }
+        else if(!this.worldObj.isRemote && this.worldObj.getBlockMaterial((int)this.posX, (int)this.posY, (int)this.posZ) == Material.water)
+        {
+            this.conversionTime += 1;
+
+            if (this.conversionTime >= 600)
+            {
+                this.convertToDrowned();
+            }
+        }
 
         super.onUpdate();
     }
@@ -584,5 +593,18 @@ public class EntityZombie extends EntityMob
         }
 
         return var1;
+    }
+    /**
+     * Convert this zombie into a drowned.
+     */
+    protected void convertToDrowned()
+    {
+        EntityDrowned var1 = new EntityDrowned(this.worldObj);
+        var1.copyLocationAndAnglesFrom(this);
+        var1.onSpawnWithEgg((EntityLivingData)null);
+
+        this.worldObj.removeEntity(this);
+        this.worldObj.spawnEntityInWorld(var1);
+        this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1017, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
     }
 }
