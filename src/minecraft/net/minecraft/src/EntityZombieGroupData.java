@@ -20,4 +20,5 @@ class EntityZombieGroupData implements EntityLivingData
     {
         this(par1EntityZombie, par2, par3);
     }
+    
 }

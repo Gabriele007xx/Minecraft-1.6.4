@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.util.Calendar;
 import java.util.UUID;
 
-public class EntityHusk extends EntityZombie
+public class EntityDrowned extends EntityZombie
 {
     protected static final Attribute field_110186_bp = (new RangedAttribute("zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D)).func_111117_a("Spawn Reinforcements Chance");
     private static final UUID babySpeedBoostUUID = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
@@ -14,7 +14,7 @@ public class EntityHusk extends EntityZombie
      */
     private int conversionTime;
 
-    public EntityHusk(World par1World)
+    public EntityDrowned(World par1World)
     {
         super(par1World);
         this.getNavigator().setBreakDoors(true);
@@ -169,16 +169,6 @@ public class EntityHusk extends EntityZombie
      */
     public void onUpdate()
     {
-        if (!this.worldObj.isRemote && this.worldObj.getBlockMaterial((int)this.posX, (int)this.posY, (int)this.posZ) == Material.water)
-        {
-            this.conversionTime += 1;
-
-            if (this.conversionTime >= 600)
-            {
-                this.convertToZombie();
-            }
-        }
-
         super.onUpdate();
     }
 
@@ -436,20 +426,6 @@ public class EntityHusk extends EntityZombie
     public boolean isConverting()
     {
         return this.getDataWatcher().getWatchableObjectByte(14) == 1;
-    }
-
-    /**
-     * Convert this husk into a zombie.
-     */
-    protected void convertToZombie()
-    {
-        EntityZombie var1 = new EntityZombie(this.worldObj);
-        var1.copyLocationAndAnglesFrom(this);
-        var1.onSpawnWithEgg((EntityLivingData)null);
-
-        this.worldObj.removeEntity(this);
-        this.worldObj.spawnEntityInWorld(var1);
-        this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1017, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
     }
 
     /**
