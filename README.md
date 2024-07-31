@@ -40,7 +40,7 @@ La documentazione è disponibile [qui](http://www.msnhomepage.altervista.org/doc
 - Porting elementi della 1.10.0:
 - - ~Husk~ 
 - Porting elementi della 1.13.0:
-- - Annegato
+- - ~Annegato~ ✅
 
 ## Non codice
 
