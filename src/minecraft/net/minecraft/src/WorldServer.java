@@ -99,6 +99,8 @@ public class WorldServer extends World
 
         this.provider.worldChunkMgr.cleanupCache();
 
+        // skip the night, and wakes up players
+
         if (this.areAllPlayersAsleep())
         {
             if (this.getGameRules().getGameRuleBooleanValue("doDaylightCycle"))
@@ -180,6 +182,7 @@ public class WorldServer extends World
     protected void wakeAllPlayers()
     {
         this.allPlayersSleeping = false;
+        // get all players
         Iterator var1 = this.playerEntities.iterator();
 
         while (var1.hasNext())
